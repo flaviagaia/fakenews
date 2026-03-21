@@ -4,7 +4,7 @@
 
 ## PT-BR
 
-Pipeline em `PyTorch` para classificação binária de notícias, estruturado como uma reprodução técnica do desafio original e organizado como projeto publicável. A solução implementa preparação textual, vocabulário manual, `Embedding + GRU + Sigmoid`, geração de submissão e teste automatizado do fluxo principal.
+Pipeline em `PyTorch` para classificação binária de notícias, estruturado a partir do desafio original e evoluído para uma versão mais estável para portfólio. A solução implementa preparação textual, vocabulário manual, `Embedding + GRU + Sigmoid`, geração de submissão e teste automatizado do fluxo principal.
 
 ### Visão Geral Técnica
 
@@ -14,6 +14,18 @@ O objetivo é classificar cada notícia em:
 - `1`: fake news
 
 O pipeline recebe os campos `title`, `content` e `tags`, transforma esse conteúdo em uma sequência numérica e treina uma rede neural recorrente para prever a classe binária.
+
+### Origem e Adaptação
+
+O projeto nasceu a partir do desafio original, mas a base foi expandida para reduzir a instabilidade extrema de validação causada por um conjunto muito pequeno. A arquitetura central foi mantida dentro do mesmo espírito técnico:
+
+- pipeline textual clássico;
+- vocabulário manual;
+- codificação por índices;
+- `Embedding + GRU + camada linear + sigmoid`;
+- treino supervisionado com `BCELoss`.
+
+Em outras palavras: o desenho do modelo continua fiel à proposta original, mas os dados foram ampliados para produzir uma avaliação mais crível.
 
 ### Como o Pipeline Funciona
 
@@ -134,7 +146,7 @@ python3 -m unittest discover -s tests -v
 
 ## EN
 
-`PyTorch` pipeline for binary fake news classification, structured as a technical reproduction of the original challenge and organized as a publishable project. The solution implements text preparation, manual vocabulary construction, `Embedding + GRU + Sigmoid`, submission generation, and automated testing for the main workflow.
+`PyTorch` pipeline for binary fake news classification, structured from the original challenge and evolved into a more stable portfolio-ready version. The solution implements text preparation, manual vocabulary construction, `Embedding + GRU + Sigmoid`, submission generation, and automated testing for the main workflow.
 
 ### Technical Overview
 
@@ -144,6 +156,18 @@ The goal is to classify each article as:
 - `1`: fake news
 
 The pipeline consumes `title`, `content`, and `tags`, converts them into a numerical sequence representation, and trains a recurrent neural network to predict the binary label.
+
+### Origin and Adaptation
+
+The project started from the original challenge, but the dataset was expanded to reduce the extreme validation instability caused by a very small training set. The core architecture was preserved within the same technical spirit:
+
+- classic text pipeline;
+- manual vocabulary;
+- index-based encoding;
+- `Embedding + GRU + linear layer + sigmoid`;
+- supervised training with `BCELoss`.
+
+In other words: the model design remains faithful to the original proposal, while the data was expanded to produce a more credible evaluation setup.
 
 ### How the Pipeline Works
 
